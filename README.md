@@ -27,11 +27,18 @@ This script provides a secure, interactive way to update WiFi passwords for mult
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-org/meraki-ssid-password-manager.git
+   git clone https://github.com/CC-Digital-Innovation/meraki-ssid-password-manager.git
    cd meraki-ssid-password-manager
    ```
 
 2. Copy the example configuration file:
+
+   **Windows (PowerShell/Command Prompt):**
+   ```powershell
+   copy config.ini.example config.ini
+   ```
+
+   **macOS/Linux:**
    ```bash
    cp config.ini.example config.ini
    ```
