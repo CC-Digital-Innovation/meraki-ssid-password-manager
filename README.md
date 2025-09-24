@@ -69,7 +69,7 @@ cd C:\path\to\meraki-ssid-password-manager
 **Windows Command Prompt:**
 ```cmd
 cd C:\path\to\meraki-ssid-password-manager
-powershell -ExecutionPolicy Bypass -File ".\Update-MerakiSSIDPasswords.ps1"
+powershell -File ".\Update-MerakiSSIDPasswords.ps1"
 ```
 
 **macOS/Linux (PowerShell Core):**
@@ -110,8 +110,8 @@ This will guide you through:
 
 **Windows Command Prompt:**
 ```cmd
-powershell -ExecutionPolicy Bypass -File ".\Update-MerakiSSIDPasswords.ps1" -OrganizationId "123456"
-powershell -ExecutionPolicy Bypass -File ".\Update-MerakiSSIDPasswords.ps1" -PreviewMode
+powershell -File ".\Update-MerakiSSIDPasswords.ps1" -OrganizationId "123456"
+powershell -File ".\Update-MerakiSSIDPasswords.ps1" -PreviewMode
 ```
 
 **macOS/Linux:**
