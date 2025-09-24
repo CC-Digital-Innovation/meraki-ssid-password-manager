@@ -245,14 +245,9 @@ Password update completed:
 
 4. **PowerShell execution policy errors (Windows)**
 
-   **Permanent solution (recommended):**
+   **Permanent solution:**
    ```powershell
-   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-   ```
-
-   **One-time bypass (alternative):**
-   ```cmd
-   powershell -ExecutionPolicy Bypass -File ".\Update-MerakiSSIDPasswords.ps1"
+   Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
    ```
 
 ### Debug Mode
