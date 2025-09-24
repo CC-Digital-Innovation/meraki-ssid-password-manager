@@ -57,9 +57,27 @@ This script provides a secure, interactive way to update WiFi passwords for mult
 
 ### Basic Interactive Mode
 
-Run the script with no parameters for full interactive mode:
-
+**Windows PowerShell:**
 ```powershell
+# Navigate to the script directory
+cd C:\path\to\meraki-ssid-password-manager
+
+# Run the script (may require execution policy adjustment - see troubleshooting)
+.\Update-MerakiSSIDPasswords.ps1
+```
+
+**Windows Command Prompt:**
+```cmd
+cd C:\path\to\meraki-ssid-password-manager
+powershell -ExecutionPolicy Bypass -File ".\Update-MerakiSSIDPasswords.ps1"
+```
+
+**macOS/Linux (PowerShell Core):**
+```bash
+# Navigate to the script directory
+cd /path/to/meraki-ssid-password-manager
+
+# Run the script
 ./Update-MerakiSSIDPasswords.ps1
 ```
 
@@ -72,21 +90,34 @@ This will guide you through:
 
 ### Command Line Parameters
 
+**Windows PowerShell:**
 ```powershell
 # Specify organization ID to skip selection
-./Update-MerakiSSIDPasswords.ps1 -OrganizationId "123456"
+.\Update-MerakiSSIDPasswords.ps1 -OrganizationId "123456"
 
 # Provide password via command line
-./Update-MerakiSSIDPasswords.ps1 -NewPassword "NewSecurePassword123!"
+.\Update-MerakiSSIDPasswords.ps1 -NewPassword "NewSecurePassword123!"
 
 # Preview mode only (no changes made)
-./Update-MerakiSSIDPasswords.ps1 -PreviewMode
+.\Update-MerakiSSIDPasswords.ps1 -PreviewMode
 
 # Custom rate limiting for slower processing
-./Update-MerakiSSIDPasswords.ps1 -ApiDelayMs 200 -UpdateDelayMs 500 -MaxRetries 5
+.\Update-MerakiSSIDPasswords.ps1 -ApiDelayMs 200 -UpdateDelayMs 500 -MaxRetries 5
 
 # Custom audit log location
-./Update-MerakiSSIDPasswords.ps1 -AuditLogPath "C:\Logs\meraki_update.log"
+.\Update-MerakiSSIDPasswords.ps1 -AuditLogPath "C:\Logs\meraki_update.log"
+```
+
+**Windows Command Prompt:**
+```cmd
+powershell -ExecutionPolicy Bypass -File ".\Update-MerakiSSIDPasswords.ps1" -OrganizationId "123456"
+powershell -ExecutionPolicy Bypass -File ".\Update-MerakiSSIDPasswords.ps1" -PreviewMode
+```
+
+**macOS/Linux:**
+```bash
+./Update-MerakiSSIDPasswords.ps1 -OrganizationId "123456"
+./Update-MerakiSSIDPasswords.ps1 -PreviewMode
 ```
 
 ### Preview Options
@@ -212,9 +243,16 @@ Password update completed:
    - Verify organization has wireless networks
    - Check API key has appropriate permissions
 
-4. **PowerShell execution policy errors**
+4. **PowerShell execution policy errors (Windows)**
+
+   **Permanent solution (recommended):**
    ```powershell
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+
+   **One-time bypass (alternative):**
+   ```cmd
+   powershell -ExecutionPolicy Bypass -File ".\Update-MerakiSSIDPasswords.ps1"
    ```
 
 ### Debug Mode
