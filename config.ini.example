@@ -1,0 +1,10 @@
+# Meraki API Configuration
+# Copy this file to config.ini and add your API key
+# IMPORTANT: Add config.ini to .gitignore to avoid committing your API key
+
+[credentials]
+api_key = your_meraki_api_key_here
+
+# Optional: Default organization ID to skip selection
+[settings]
+# organization_id = 123456

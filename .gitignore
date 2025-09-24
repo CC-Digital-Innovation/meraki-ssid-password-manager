@@ -1,0 +1,13 @@
+# Configuration files containing sensitive data
+config.ini
+
+# PowerShell specific
+*.ps1xml
+
+# Logs
+*.log
+audit_*.txt
+
+# Temporary files
+*.tmp
+*.temp
